@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "5838f0ab-a18d-4a6d-8048-34275eab73dc",
+		"name": "Vendor Management System with Performance Metrics",
+		"description": "Vendor Management System API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31749598"
+	},
+	"item": [
+		{
+			"name": "Vendor Endpoints",
+			"item": [
+				{
+					"name": "Create Vendors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n        \"name\": \"Smith\",\r\n        \"contact_details\": \"9879654743,smith@gmail.com\",\r\n        \"address\": \"101,A-4 Shukan Corporate Park  ,Ahmedabad Gujarat\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Vendors",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive Specific Vendor",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Vendor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nayan Tank\",\r\n        \"contact_details\": \"7689584967,n@gmail.com\",\r\n        \"address\": \"12/A, Omkar Residence ,Jamnagar Gujarat\",\r\n        \"api_key\": \"b5dd675d-9ac6-420d-ad82-16a63edfc11d\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/4/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Vendor",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "b0e299c5-0cfc-4b4e-9f02-9421b318d480",
+								"description": "api key of vendor whose id is 7 ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/7/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"7",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obatin api_key for a Vendor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/obtain_key/4/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"obtain_key",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Performance Endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/4/performance",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"4",
+								"performance"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase Order Endpoint",
+			"item": [
+				{
+					"name": "List Order with filter option for a vendor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/?vendor_id=4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								""
+							],
+							"query": [
+								{
+									"key": "vendor_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Purchase  Orders",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "List Specific Purchase Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Purchase Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"vendor\":4,\r\n\"api_key\":\"b5dd675d-9ac6-420d-ad82-16a63edfc11d\",\r\n\r\n\"items\": [\r\n            {\r\n                \"name\": \"Keyboard\",\r\n                \"quantity\": 50,\r\n                \"price\": 850\r\n            }\r\n        ]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Purchase Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vendor\":4,\r\n    \"api_key\":\"b5dd675d-9ac6-420d-ad82-16a63edfc11d\",\r\n    \"status\":\"completed\",\r\n    \"items\": [\r\n            {\r\n                \"name\": \"Tablet\",\r\n                \"quantity\": 8,\r\n                \"price\": 800\r\n            }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/27/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"27",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Purchase Order",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "78552a09-52c8-4dde-9fff-ccf338650049",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/26/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"26",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Acknowledge Purchase Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/26/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"26",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
